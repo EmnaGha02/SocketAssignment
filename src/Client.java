@@ -21,7 +21,14 @@ public class Client {
         PrintWriter outClient = new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())), true);
 
         // todo: implement the scenario
-
+        Scanner obj = new Scanner(System.in);
+        System.out.println("Donner une phrase quelconque");
+        String mot = obj.nextLine();
+        outClient.println(mot);
+        String ch = inClient.readLine();
+        System.out.println(ch);
+        obj.close();
+        
         //close in / out
         inClient.close();
         outClient.close();
